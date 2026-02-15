@@ -196,7 +196,7 @@ app.post('/telegram/webhook', async (req, res) => {
         updateHistory(chatId, newHistory);
 
         // Send response (auto-splits if needed)
-        await sendMessage(telegramBotToken, chatId, response);
+        await sendMessage(telegramBotToken, chatId, response, { escape: true });
       } catch (err) {
         console.error(`Failed to process message with ${getChatProvider()}:`, err);
         await sendMessage(telegramBotToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
@@ -261,7 +261,7 @@ app.post('/github/webhook', async (req, res) => {
 
     const message = await summarizeJob(results);
 
-    await sendMessage(telegramBotToken, notificationChatId, message);
+    await sendMessage(telegramBotToken, notificationChatId, message, { escape: true });
 
     // Add the summary to chat memory so chat has context in future conversations
     const history = getHistory(notificationChatId);

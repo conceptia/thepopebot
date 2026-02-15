@@ -97,20 +97,30 @@ function escapeHtml(text) {
  * @param {string} text - Message text (HTML formatted)
  * @param {Object} [options] - Additional options
  * @param {boolean} [options.disablePreview] - Disable link previews
+ * @param {boolean} [options.escape] - Escape text before sending (useful for LLM output)
+ * @param {string} [options.parseMode] - Telegram parse mode (default: HTML)
  * @returns {Promise<Object>} - Last message sent
  */
 async function sendMessage(botToken, chatId, text, options = {}) {
   const b = getBot(botToken);
+
+  if (options.escape) {
+    text = escapeHtml(text);
+  }
+
   // Strip HTML comments — Telegram's HTML parser doesn't support them
   text = text.replace(/<!--[\s\S]*?-->/g, '');
   const chunks = smartSplit(text, MAX_LENGTH);
 
+  const parseMode = options.parseMode || 'HTML';
+  const messageOptions = {
+    parse_mode: parseMode,
+    link_preview_options: { is_disabled: options.disablePreview ?? false },
+  };
+
   let lastMessage;
   for (const chunk of chunks) {
-    lastMessage = await b.api.sendMessage(chatId, chunk, {
-      parse_mode: 'HTML',
-      link_preview_options: { is_disabled: options.disablePreview ?? false },
-    });
+    lastMessage = await b.api.sendMessage(chatId, chunk, messageOptions);
   }
 
   return lastMessage;
