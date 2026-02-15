@@ -15,11 +15,21 @@ All environment variables for the Event Handler (set in `event_handler/.env`):
 | `TELEGRAM_CHAT_ID` | Restricts bot to allowed chat ID(s); supports comma-separated values | For security |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
-| `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
-| `OPENAI_API_KEY` | OpenAI key for voice transcription | For voice |
-| `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
+| `CHAT_PROVIDER` | Global LLM provider for Telegram, job summaries, and newly created autonomous jobs (`claude` or `chatgpt`) | No (default: `claude`) |
+| `ANTHROPIC_API_KEY` | Claude API key (required when `CHAT_PROVIDER=claude`) | Conditional |
+| `EVENT_HANDLER_MODEL` | Claude model for chat/summaries (default: claude-sonnet-4) | No |
+| `CHATGPT_API_KEY` | ChatGPT API key (required when `CHAT_PROVIDER=chatgpt`) | Conditional |
+| `CHATGPT_MODEL` | ChatGPT model for event-handler chat/summaries (default: `gpt-5-mini`) | No |
+| `CHATGPT_JOB_MODEL` | Optional ChatGPT model override for Docker job runtime | No |
+| `CLAUDE_JOB_MODEL` | Optional Claude model override for Docker job runtime | No |
+| `CHATGPT_MAX_TOKENS` | Optional max completion token cap for ChatGPT calls | No |
+| `CHATGPT_TEMPERATURE` | Optional ChatGPT temperature override | No |
+| `CHATGPT_BASE_URL` | Optional ChatGPT API base URL override | No |
+| `OPENAI_API_KEY` | OpenAI key for Whisper voice transcription | For voice |
 
 ---
+
+> **Provider propagation:** when a job is created, the event handler stores provider runtime metadata under `logs/<JOB_ID>/runtime.json` so GitHub Actions uses the same provider family for that job run.
 
 ## GitHub Secrets
 
@@ -43,7 +53,7 @@ Configure in **Settings → Secrets and variables → Actions → Variables**:
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | No | Enabled |
 | `ALLOWED_PATHS` | Comma-separated path prefixes for auto-merge | No | `/logs` |
 | `IMAGE_URL` | Docker image path (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
-| `MODEL` | Anthropic model ID for the Pi agent (e.g., `claude-sonnet-4-5-20250929`) | No | Pi default |
+| `MODEL` | Legacy fallback model variable for Docker agent runtime (provider-specific behavior now driven by `CHAT_PROVIDER`) | No | Pi default |
 
 ---
 
@@ -64,6 +74,8 @@ This will verify your server is running, update the GitHub webhook URL, re-regis
 If you're deploying to a platform where you can't run the setup script (Vercel, Railway, etc.), configure Telegram manually:
 
 1. **Set environment variables** in your platform's dashboard (see `event_handler/.env.example` for reference):
+   - `CHAT_PROVIDER` - `claude` (default) or `chatgpt`
+   - `ANTHROPIC_API_KEY` when using Claude, or `CHATGPT_API_KEY` when using ChatGPT
    - `TELEGRAM_BOT_TOKEN` - Your bot token from @BotFather
    - `TELEGRAM_WEBHOOK_SECRET` - Generate with `openssl rand -hex 32`
    - `TELEGRAM_VERIFICATION` - A verification code like `verify-abc12345`
