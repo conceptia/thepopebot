@@ -23,29 +23,20 @@ app.use(express.json());
 
 const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, GH_WEBHOOK_SECRET, GH_OWNER, GH_REPO, TELEGRAM_CHAT_ID, TELEGRAM_VERIFICATION } = process.env;
 
-const configuredTelegramChatIds = (TELEGRAM_CHAT_ID || '')
-  .split(',')
-  .map((id) => id.trim())
-  .filter(Boolean);
+function parseTelegramChatIds(rawChatIds) {
+  return String(rawChatIds || '')
+    .split(',')
+    .map((id) => id.trim().replace(/^['"]|['"]$/g, ''))
+    .filter(Boolean)
+    .map((id) => {
+      const match = id.match(/^-?\d+/);
+      return match ? match[0] : id;
+    });
+}
+
+const configuredTelegramChatIds = parseTelegramChatIds(TELEGRAM_CHAT_ID);
 const allowedTelegramChatIds = new Set(configuredTelegramChatIds);
 const configuredTelegramWebhookSecret = (TELEGRAM_WEBHOOK_SECRET || '').trim();
-
-function describeTelegramChatIdMismatch(incomingChatId) {
-  if (!configuredTelegramChatIds.length) {
-    return '';
-  }
-
-  const nearMatch = configuredTelegramChatIds.find((configuredId) => {
-    if (configuredId === incomingChatId) return false;
-    return incomingChatId.startsWith(configuredId) || configuredId.startsWith(incomingChatId);
-  });
-
-  if (nearMatch) {
-    return ` Near match detected: configured=${nearMatch}, incoming=${incomingChatId}.`;
-  }
-
-  return '';
-}
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
@@ -124,7 +115,7 @@ app.post('/telegram/webhook', async (req, res) => {
   const message = update.message || update.edited_message;
   const incomingChatId = message?.chat?.id ? String(message.chat.id) : 'unknown';
 
-  console.log(`[TELEGRAM] Webhook received: update_id=${update.update_id ?? 'unknown'} chat_id=${incomingChatId}`);
+  console.log(`[TELEGRAM] Webhook received: update_id=${update.update_id ?? 'unknown'} chat_id=${incomingChatId} allowed_chat_ids=${configuredTelegramChatIds.join(',') || 'none'}`);
 
   // Validate secret token if configured
   // Always return 200 to prevent Telegram retry loops on mismatch
@@ -160,9 +151,7 @@ app.post('/telegram/webhook', async (req, res) => {
 
     // Security: only accept messages from configured chat
     if (!allowedTelegramChatIds.has(chatId)) {
-      const configuredIds = configuredTelegramChatIds.join(', ');
-      const mismatchHint = describeTelegramChatIdMismatch(chatId);
-      console.log(`[TELEGRAM] Ignoring update from unauthorized chat ${chatId}. Configured TELEGRAM_CHAT_ID value(s): ${configuredIds}. Configure TELEGRAM_CHAT_ID with this value to allow it.${mismatchHint}`);
+      console.log(`[TELEGRAM] Ignoring update from unauthorized chat ${chatId}. Allowed: ${configuredTelegramChatIds.join(',') || 'none'}. Configure TELEGRAM_CHAT_ID with this value to allow it.`);
       return res.status(200).json({ ok: true });
     }
 
