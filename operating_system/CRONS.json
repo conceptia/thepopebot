@@ -50,5 +50,13 @@
     "type": "agent",
     "job": "Read the file at operating_system/FINANCIAL_ADVISOR/FINANCIAL_ADVISOR.md and complete the tasks described there.",
     "enabled": true
+  },
+  {
+    "name": "generate-daily-financial-report",
+    "schedule": "0 10 * * *",
+    "type": "agent",
+    "job": "Read the file at operating_system/FINANCIAL_ADVISOR/DAILY_BUSINESS_FINANCIAL_REPORT.md and complete the tasks described there.",
+    "enabled": true,
+    "description": "Daily business financial report (revenue, expenses, transactions) - Runs at 04:00 CST (10:00 UTC)"
   }
 ]
