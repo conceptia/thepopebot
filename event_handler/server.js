@@ -28,9 +28,24 @@ const configuredTelegramChatIds = (TELEGRAM_CHAT_ID || '')
   .map((id) => id.trim())
   .filter(Boolean);
 const allowedTelegramChatIds = new Set(configuredTelegramChatIds);
-//const configuredTelegramChatId = (TELEGRAM_CHAT_ID || '').trim();
-const configuredTelegramChatId = configuredTelegramChatIds[0];
 const configuredTelegramWebhookSecret = (TELEGRAM_WEBHOOK_SECRET || '').trim();
+
+function describeTelegramChatIdMismatch(incomingChatId) {
+  if (!configuredTelegramChatIds.length) {
+    return '';
+  }
+
+  const nearMatch = configuredTelegramChatIds.find((configuredId) => {
+    if (configuredId === incomingChatId) return false;
+    return incomingChatId.startsWith(configuredId) || configuredId.startsWith(incomingChatId);
+  });
+
+  if (nearMatch) {
+    return ` Near match detected: configured=${nearMatch}, incoming=${incomingChatId}.`;
+  }
+
+  return '';
+}
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
@@ -145,7 +160,9 @@ app.post('/telegram/webhook', async (req, res) => {
 
     // Security: only accept messages from configured chat
     if (!allowedTelegramChatIds.has(chatId)) {
-      console.log(`[TELEGRAM] Ignoring update from unauthorized chat ${chatId}. Configure TELEGRAM_CHAT_ID with this value to allow it.`);
+      const configuredIds = configuredTelegramChatIds.join(', ');
+      const mismatchHint = describeTelegramChatIdMismatch(chatId);
+      console.log(`[TELEGRAM] Ignoring update from unauthorized chat ${chatId}. Configured TELEGRAM_CHAT_ID value(s): ${configuredIds}. Configure TELEGRAM_CHAT_ID with this value to allow it.${mismatchHint}`);
       return res.status(200).json({ ok: true });
     }
 
