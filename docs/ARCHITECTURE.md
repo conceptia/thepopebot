@@ -75,7 +75,7 @@ thepopebot uses a two-layer architecture:
 ├── setup/                   # Interactive setup wizard
 │   ├── setup.mjs            # Main wizard script
 │   └── lib/                 # Helper modules
-├── logs/                    # Per-job directories (job.md + session logs)
+├── logs/                    # Per-job directories (job.md + runtime metadata + session logs)
 ├── Dockerfile               # Container definition
 ├── entrypoint.sh            # Startup script
 └── SECURITY.md              # Security documentation
@@ -156,6 +156,7 @@ curl -X POST http://localhost:3000/telegram/register \
 3. Docker agent executes task, commits results, creates PR
 4. `auto-merge.yml` runs → checks merge policy → squash merges (or leaves open)
 5. `update-event-handler.yml` runs → gathers job data → sends to event handler → Telegram notification
+6. Job runtime reads `logs/<JOB_ID>/runtime.json` to align provider/model with event handler `CHAT_PROVIDER` setting
 
 ---
 

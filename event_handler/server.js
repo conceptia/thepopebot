@@ -8,7 +8,7 @@ const { loadTriggers } = require('./triggers');
 const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage, startTypingIndicator } = require('./tools/telegram');
 const { isWhisperEnabled, transcribeAudio } = require('./tools/openai');
 const { chat, summarizeJob, getChatProvider, validateProviderConfig } = require('./llm');
-const { toolDefinitions, toolExecutors } = require('./claude/tools');
+const { toolDefinitions, toolExecutors } = require('./llm/tools');
 const { getHistory, updateHistory } = require('./claude/conversation');
 const { githubApi, getJobStatus } = require('./tools/github');
 

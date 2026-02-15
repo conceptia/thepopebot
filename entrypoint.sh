@@ -30,6 +30,11 @@ if [ -n "$LLM_SECRETS" ]; then
     eval $(echo "$LLM_SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
 fi
 
+# Allow CHATGPT_API_KEY to drive OpenAI-based Pi runs without reusing OPENAI_API_KEY in config
+if [ -n "$CHATGPT_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+    export OPENAI_API_KEY="$CHATGPT_API_KEY"
+fi
+
 # Git setup - derive identity from GitHub token
 gh auth setup-git
 GH_USER_JSON=$(gh api user -q '{name: .name, login: .login, email: .email, id: .id}')
@@ -73,10 +78,30 @@ PROMPT="
 
 $(cat /job/logs/${JOB_ID}/job.md)"
 
-MODEL_FLAGS=""
-if [ -n "$MODEL" ]; then
-    MODEL_FLAGS="--provider anthropic --model $MODEL"
+JOB_RUNTIME_FILE="/job/logs/${JOB_ID}/runtime.json"
+JOB_CHAT_PROVIDER="${CHAT_PROVIDER:-claude}"
+JOB_PI_PROVIDER=""
+JOB_MODEL=""
+
+if [ -f "$JOB_RUNTIME_FILE" ]; then
+    JOB_CHAT_PROVIDER=$(jq -r '(.chat_provider // "claude")' "$JOB_RUNTIME_FILE")
+    JOB_PI_PROVIDER=$(jq -r '(.pi_provider // "")' "$JOB_RUNTIME_FILE")
+    JOB_MODEL=$(jq -r '(.model // "")' "$JOB_RUNTIME_FILE")
 fi
+
+MODEL_FLAGS=""
+if [ "$JOB_CHAT_PROVIDER" = "chatgpt" ]; then
+    FINAL_PROVIDER="${JOB_PI_PROVIDER:-openai}"
+    FINAL_MODEL="${JOB_MODEL:-${CHATGPT_JOB_MODEL:-${CHATGPT_MODEL:-gpt-5-mini}}}"
+    MODEL_FLAGS="--provider $FINAL_PROVIDER --model $FINAL_MODEL"
+elif [ "$JOB_CHAT_PROVIDER" = "claude" ]; then
+    FINAL_PROVIDER="${JOB_PI_PROVIDER:-anthropic}"
+    FINAL_MODEL="${JOB_MODEL:-${CLAUDE_JOB_MODEL:-${MODEL:-claude-sonnet-4-20250514}}}"
+    MODEL_FLAGS="--provider $FINAL_PROVIDER --model $FINAL_MODEL"
+fi
+
+echo "Using chat provider: ${JOB_CHAT_PROVIDER}"
+echo "Using Pi provider/model flags: ${MODEL_FLAGS}"
 
 pi $MODEL_FLAGS -p "$PROMPT" --session-dir "${LOG_DIR}"
 
