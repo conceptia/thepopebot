@@ -23,7 +23,7 @@ There are currently two ways to trigger jobs — Telegram and webhooks — with 
 
 ### Telegram Chat
 
-Message your bot directly to chat or create jobs. The bot uses Claude to understand your requests and can:
+Message your bot directly to chat or create jobs. The bot uses your configured chat provider (`CHAT_PROVIDER`: Claude or ChatGPT) to understand your requests and can:
 
 - **Chat** - Have a conversation, ask questions, get information
 - **Create jobs** - Say "create a job to..." and the bot will spawn an autonomous agent
