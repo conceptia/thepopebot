@@ -23,15 +23,27 @@ app.use(express.json());
 
 const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, GH_WEBHOOK_SECRET, GH_OWNER, GH_REPO, TELEGRAM_CHAT_ID, TELEGRAM_VERIFICATION } = process.env;
 
+const configuredTelegramChatIds = (TELEGRAM_CHAT_ID || '')
+  .split(',')
+  .map((id) => id.trim())
+  .filter(Boolean);
+const allowedTelegramChatIds = new Set(configuredTelegramChatIds);
+const configuredTelegramWebhookSecret = (TELEGRAM_WEBHOOK_SECRET || '').trim();
+
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
 
 // Routes that have their own authentication
-const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
+const PUBLIC_ROUTES = new Set(['/telegram/webhook', '/github/webhook']);
+
+function normalizePath(pathname) {
+  if (!pathname) return pathname;
+  return pathname !== '/' ? pathname.replace(/\/+$/, '') : pathname;
+}
 
 // Global x-api-key auth (skip for routes with their own auth)
 app.use((req, res, next) => {
-  if (PUBLIC_ROUTES.includes(req.path)) {
+  if (PUBLIC_ROUTES.has(normalizePath(req.path))) {
     return next();
   }
   if (req.headers['x-api-key'] !== API_KEY) {
@@ -91,17 +103,22 @@ app.post('/telegram/register', async (req, res) => {
 
 // POST /telegram/webhook - receive Telegram updates
 app.post('/telegram/webhook', async (req, res) => {
+  const update = req.body || {};
+  const message = update.message || update.edited_message;
+  const incomingChatId = message?.chat?.id ? String(message.chat.id) : 'unknown';
+
+  console.log(`[TELEGRAM] Webhook received: update_id=${update.update_id ?? 'unknown'} chat_id=${incomingChatId}`);
+
   // Validate secret token if configured
   // Always return 200 to prevent Telegram retry loops on mismatch
-  if (TELEGRAM_WEBHOOK_SECRET) {
+  if (configuredTelegramWebhookSecret) {
     const headerSecret = req.headers['x-telegram-bot-api-secret-token'];
-    if (headerSecret !== TELEGRAM_WEBHOOK_SECRET) {
+    if (headerSecret !== configuredTelegramWebhookSecret) {
+      console.log('[TELEGRAM] Ignoring update due to webhook secret mismatch');
       return res.status(200).json({ ok: true });
     }
   }
 
-  const update = req.body;
-  const message = update.message || update.edited_message;
 
   if (message && message.chat && telegramBotToken) {
     const chatId = String(message.chat.id);
@@ -119,12 +136,14 @@ app.post('/telegram/webhook', async (req, res) => {
     }
 
     // Security: if no TELEGRAM_CHAT_ID configured, ignore all messages (except verification above)
-    if (!TELEGRAM_CHAT_ID) {
+    if (allowedTelegramChatIds.size === 0) {
+      console.log('[TELEGRAM] Ignoring update because TELEGRAM_CHAT_ID is not configured');
       return res.status(200).json({ ok: true });
     }
 
     // Security: only accept messages from configured chat
-    if (chatId !== TELEGRAM_CHAT_ID) {
+    if (!allowedTelegramChatIds.has(chatId)) {
+      console.log(`[TELEGRAM] Ignoring update from unauthorized chat ${chatId}. Configure TELEGRAM_CHAT_ID with this value to allow it.`);
       return res.status(200).json({ ok: true });
     }
 
@@ -174,7 +193,12 @@ app.post('/telegram/webhook', async (req, res) => {
       }
     }
   } else {
-    // No message to process — still acknowledge
+    // No message or bot token to process — still acknowledge
+    if (!telegramBotToken) {
+      console.log('[TELEGRAM] Ignoring update because TELEGRAM_BOT_TOKEN is not configured');
+    } else {
+      console.log('[TELEGRAM] Ignoring update because no message payload was found');
+    }
     res.status(200).json({ ok: true });
   }
 });
@@ -267,7 +291,9 @@ app.post('/github/webhook', async (req, res) => {
   const jobId = extractJobId(branchName);
   if (!jobId) return res.status(200).json({ ok: true, skipped: true, reason: 'not a job branch' });
 
-  if (!TELEGRAM_CHAT_ID || !telegramBotToken) {
+  const notificationChatId = configuredTelegramChatIds[0];
+
+  if (!notificationChatId || !telegramBotToken) {
     console.log(`Job ${jobId} completed but no chat ID to notify`);
     return res.status(200).json({ ok: true, skipped: true, reason: 'no chat to notify' });
   }
@@ -279,14 +305,14 @@ app.post('/github/webhook', async (req, res) => {
 
     const message = await summarizeJob(results);
 
-    await sendMessage(telegramBotToken, TELEGRAM_CHAT_ID, message);
+    await sendMessage(telegramBotToken, notificationChatId, message);
 
     // Add the summary to chat memory so Claude has context in future conversations
-    const history = getHistory(TELEGRAM_CHAT_ID);
+    const history = getHistory(notificationChatId);
     history.push({ role: 'assistant', content: message });
-    updateHistory(TELEGRAM_CHAT_ID, history);
+    updateHistory(notificationChatId, history);
 
-    console.log(`Notified chat ${TELEGRAM_CHAT_ID} about job ${jobId.slice(0, 8)}`);
+    console.log(`Notified chat ${notificationChatId} about job ${jobId.slice(0, 8)}`);
 
     res.status(200).json({ ok: true, notified: true });
   } catch (err) {
