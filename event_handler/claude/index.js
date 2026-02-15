@@ -136,7 +136,53 @@ async function chat(userMessage, history, toolDefinitions, toolExecutors) {
   };
 }
 
+function buildSummaryUserMessage(results) {
+  return [
+    results.job ? `## Task\n${results.job}` : '',
+    results.commit_message ? `## Commit Message\n${results.commit_message}` : '',
+    results.changed_files?.length ? `## Changed Files\n${results.changed_files.join('\n')}` : '',
+    results.pr_status ? `## PR Status\n${results.pr_status}` : '',
+    results.merge_result ? `## Merge Result\n${results.merge_result}` : '',
+    results.pr_url ? `## PR URL\n${results.pr_url}` : '',
+    results.log ? `## Agent Log\n${results.log}` : '',
+  ].filter(Boolean).join('\n\n');
+}
+
+async function summarizeJob(results) {
+  try {
+    const apiKey = getApiKey();
+
+    const systemPrompt = render_md(
+      path.join(__dirname, '..', '..', 'operating_system', 'JOB_SUMMARY.md')
+    );
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: process.env.EVENT_HANDLER_MODEL || DEFAULT_MODEL,
+        max_tokens: 1024,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: buildSummaryUserMessage(results) }],
+      }),
+    });
+
+    if (!response.ok) throw new Error(`Claude API error: ${response.status}`);
+
+    const result = await response.json();
+    return (result.content?.[0]?.text || '').trim() || 'Job completed.';
+  } catch (err) {
+    console.error('Failed to summarize job with Claude:', err);
+    return 'Job completed.';
+  }
+}
+
 module.exports = {
   chat,
   getApiKey,
+  summarizeJob,
 };

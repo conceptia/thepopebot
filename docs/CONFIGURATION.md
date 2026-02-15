@@ -15,9 +15,15 @@ All environment variables for the Event Handler (set in `event_handler/.env`):
 | `TELEGRAM_CHAT_ID` | Restricts bot to allowed chat ID(s); supports comma-separated values | For security |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
-| `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
-| `OPENAI_API_KEY` | OpenAI key for voice transcription | For voice |
-| `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
+| `CHAT_PROVIDER` | Chat engine for Telegram + job summaries (`claude` or `chatgpt`) | No (default: `claude`) |
+| `ANTHROPIC_API_KEY` | Claude API key (required when `CHAT_PROVIDER=claude`) | Conditional |
+| `EVENT_HANDLER_MODEL` | Claude model for chat/summaries (default: claude-sonnet-4) | No |
+| `CHATGPT_API_KEY` | ChatGPT API key (required when `CHAT_PROVIDER=chatgpt`) | Conditional |
+| `CHATGPT_MODEL` | ChatGPT model (default: `gpt-5-mini`) | No |
+| `CHATGPT_MAX_TOKENS` | Optional max completion token cap for ChatGPT calls | No |
+| `CHATGPT_TEMPERATURE` | Optional ChatGPT temperature override | No |
+| `CHATGPT_BASE_URL` | Optional ChatGPT API base URL override | No |
+| `OPENAI_API_KEY` | OpenAI key for Whisper voice transcription | For voice |
 
 ---
 
@@ -64,6 +70,8 @@ This will verify your server is running, update the GitHub webhook URL, re-regis
 If you're deploying to a platform where you can't run the setup script (Vercel, Railway, etc.), configure Telegram manually:
 
 1. **Set environment variables** in your platform's dashboard (see `event_handler/.env.example` for reference):
+   - `CHAT_PROVIDER` - `claude` (default) or `chatgpt`
+   - `ANTHROPIC_API_KEY` when using Claude, or `CHATGPT_API_KEY` when using ChatGPT
    - `TELEGRAM_BOT_TOKEN` - Your bot token from @BotFather
    - `TELEGRAM_WEBHOOK_SECRET` - Generate with `openssl rand -hex 32`
    - `TELEGRAM_VERIFICATION` - A verification code like `verify-abc12345`

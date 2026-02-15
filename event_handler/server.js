@@ -1,7 +1,5 @@
 const express = require('express');
 const helmet = require('helmet');
-const fs = require('fs');
-const path = require('path');
 require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
@@ -9,12 +7,10 @@ const { loadCrons } = require('./cron');
 const { loadTriggers } = require('./triggers');
 const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage, startTypingIndicator } = require('./tools/telegram');
 const { isWhisperEnabled, transcribeAudio } = require('./tools/openai');
-const { chat } = require('./claude');
+const { chat, summarizeJob, getChatProvider, validateProviderConfig } = require('./llm');
 const { toolDefinitions, toolExecutors } = require('./claude/tools');
 const { getHistory, updateHistory } = require('./claude/conversation');
 const { githubApi, getJobStatus } = require('./tools/github');
-const { getApiKey } = require('./claude');
-const { render_md } = require('./utils/render-md');
 
 const app = express();
 
@@ -37,6 +33,14 @@ function parseTelegramChatIds(rawChatIds) {
 const configuredTelegramChatIds = parseTelegramChatIds(TELEGRAM_CHAT_ID);
 const allowedTelegramChatIds = new Set(configuredTelegramChatIds);
 const configuredTelegramWebhookSecret = (TELEGRAM_WEBHOOK_SECRET || '').trim();
+
+try {
+  validateProviderConfig();
+  console.log(`[LLM] Using chat provider: ${getChatProvider()}`);
+} catch (err) {
+  console.error(`[LLM] Provider configuration error: ${err.message}`);
+  process.exit(1);
+}
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
@@ -181,7 +185,7 @@ app.post('/telegram/webhook', async (req, res) => {
     if (messageText) {
       const stopTyping = startTypingIndicator(telegramBotToken, chatId);
       try {
-        // Get conversation history and process with Claude
+        // Get conversation history and process with configured chat provider
         const history = getHistory(chatId);
         const { response, history: newHistory } = await chat(
           messageText,
@@ -194,7 +198,7 @@ app.post('/telegram/webhook', async (req, res) => {
         // Send response (auto-splits if needed)
         await sendMessage(telegramBotToken, chatId, response);
       } catch (err) {
-        console.error('Failed to process message with Claude:', err);
+        console.error(`Failed to process message with ${getChatProvider()}:`, err);
         await sendMessage(telegramBotToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
       } finally {
         stopTyping();
@@ -217,62 +221,6 @@ app.post('/telegram/webhook', async (req, res) => {
 function extractJobId(branchName) {
   if (!branchName || !branchName.startsWith('job/')) return null;
   return branchName.slice(4);
-}
-
-/**
- * Summarize a completed job using Claude — returns the raw message to send
- * @param {Object} results - Job results from webhook payload
- * @param {string} results.job - Original task (job.md)
- * @param {string} results.commit_message - Final commit message
- * @param {string[]} results.changed_files - List of changed file paths
- * @param {string} results.pr_status - PR state (open, closed, merged)
- * @param {string} results.log - Agent session log (JSONL)
- * @param {string} results.pr_url - PR URL
- * @returns {Promise<string>} The message to send to Telegram
- */
-async function summarizeJob(results) {
-  try {
-    const apiKey = getApiKey();
-
-    // System prompt from JOB_SUMMARY.md (supports {{includes}})
-    const systemPrompt = render_md(
-      path.join(__dirname, '..', 'operating_system', 'JOB_SUMMARY.md')
-    );
-
-    // User message: structured job results
-    const userMessage = [
-      results.job ? `## Task\n${results.job}` : '',
-      results.commit_message ? `## Commit Message\n${results.commit_message}` : '',
-      results.changed_files?.length ? `## Changed Files\n${results.changed_files.join('\n')}` : '',
-      results.pr_status ? `## PR Status\n${results.pr_status}` : '',
-      results.merge_result ? `## Merge Result\n${results.merge_result}` : '',
-      results.pr_url ? `## PR URL\n${results.pr_url}` : '',
-      results.log ? `## Agent Log\n${results.log}` : '',
-    ].filter(Boolean).join('\n\n');
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: process.env.EVENT_HANDLER_MODEL || 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: userMessage }],
-      }),
-    });
-
-    if (!response.ok) throw new Error(`Claude API error: ${response.status}`);
-
-    const result = await response.json();
-    return (result.content?.[0]?.text || '').trim() || 'Job completed.';
-  } catch (err) {
-    console.error('Failed to summarize job:', err);
-    return 'Job completed.';
-  }
 }
 
 // POST /github/webhook - receive GitHub PR notifications
@@ -315,7 +263,7 @@ app.post('/github/webhook', async (req, res) => {
 
     await sendMessage(telegramBotToken, notificationChatId, message);
 
-    // Add the summary to chat memory so Claude has context in future conversations
+    // Add the summary to chat memory so chat has context in future conversations
     const history = getHistory(notificationChatId);
     history.push({ role: 'assistant', content: message });
     updateHistory(notificationChatId, history);
