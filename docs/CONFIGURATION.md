@@ -12,7 +12,7 @@ All environment variables for the Event Handler (set in `event_handler/.env`):
 | `GH_REPO` | GitHub repository name | Yes |
 | `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
-| `TELEGRAM_CHAT_ID` | Restricts bot to this chat only | For security |
+| `TELEGRAM_CHAT_ID` | Restricts bot to allowed chat ID(s); supports comma-separated values | For security |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
