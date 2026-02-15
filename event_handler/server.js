@@ -28,6 +28,8 @@ const configuredTelegramChatIds = (TELEGRAM_CHAT_ID || '')
   .map((id) => id.trim())
   .filter(Boolean);
 const allowedTelegramChatIds = new Set(configuredTelegramChatIds);
+//const configuredTelegramChatId = (TELEGRAM_CHAT_ID || '').trim();
+const configuredTelegramChatId = configuredTelegramChatIds[0];
 const configuredTelegramWebhookSecret = (TELEGRAM_WEBHOOK_SECRET || '').trim();
 
 // Bot token from env, can be overridden by /telegram/register
