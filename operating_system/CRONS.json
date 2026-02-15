@@ -45,8 +45,8 @@
     "enabled": false
   },
   {
-    "name": "daily-financial-research",
-    "schedule": "0 14 * * 1-5",
+    "name": "daily-financial-premarket-research",
+    "schedule": "0 12 * * 1-5",
     "type": "agent",
     "job": "Read the file at operating_system/FINANCIAL_ADVISOR/FINANCIAL_ADVISOR.md and complete the tasks described there.",
     "enabled": true
