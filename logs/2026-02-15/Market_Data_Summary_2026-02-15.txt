@@ -1,0 +1,117 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                     DAILY MARKET DATA SUMMARY                              ║
+║                       February 15, 2026                                    ║
+║                    (Friday Close - Weekend Edition)                        ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ U.S. EQUITY INDICES                                                      │
+├──────────────────────────────────────────────────────────────────────────┤
+│ S&P 500           │ 6,806.22    │ -26.54    │ -0.39%   │ YTD: -0.14%   │
+│ Dow Jones         │ 49,184.21   │ -267.77   │ -0.54%   │ YTD: +3.00%   │
+│ NASDAQ Composite  │ 22,438.04   │ -159.11   │ -0.70%   │ YTD: -3.00%   │
+│ Russell 2000      │ —           │ —         │ —        │ YTD: +6.60%   │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ VOLATILITY & FIXED INCOME                                                │
+├──────────────────────────────────────────────────────────────────────────┤
+│ VIX (Volatility)  │ 20.6        │ Elevated (discomfort, not panic)      │
+│ 10-Yr Treasury    │ 4.0-4.2%    │ Eased on CPI data; real yield ~1.7%   │
+│ MOVE Index        │ 70.10       │ Bond volatility cooling               │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ ECONOMIC DATA                                                            │
+├──────────────────────────────────────────────────────────────────────────┤
+│ CPI (Jan 2026)    │ +2.4% YoY   │ Below 2.5% exp; best in 5 years       │
+│ Core CPI          │ +2.5% YoY   │ In line with expectations             │
+│ Fed Funds Rate    │ Unchanged   │ First 2026 meeting held steady        │
+│ June Cut Odds     │ 94%         │ 25 bps cut highly probable            │
+│ 2026 Cuts Exp.    │ 2+          │ Market pricing minimum 2 cuts         │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ COMMODITIES                                                              │
+├──────────────────────────────────────────────────────────────────────────┤
+│ WTI Crude Oil     │ $62.89/bbl  │ +$0.05 (+0.08%)  │ Stable            │
+│ Brent Crude       │ $67.57/bbl  │ +0.08%           │ Modest gains      │
+│ Gold              │ >$5,030/oz  │ +1.60%           │ Safe-haven bid    │
+│ Silver            │ ~$78.53/oz  │ +3.77%           │ Volatile surge    │
+│ Natural Gas       │ —           │ Sharp decline    │ Downward pressure │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ CURRENCIES                                                               │
+├──────────────────────────────────────────────────────────────────────────┤
+│ EUR/USD           │ 1.08-1.10   │ Recovery from lows                    │
+│ USD Index (DXY)   │ —           │ Downward bias; two-way volatility     │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ SECTOR PERFORMANCE                                                       │
+├──────────────────────────────────────────────────────────────────────────┤
+│ BEST SECTORS:                                                            │
+│   • Consumer Staples         │ Defensive outperformance                 │
+│   • Chip Equipment           │ AI infrastructure demand                 │
+│   • Select EVs               │ Improving fundamentals                   │
+│                                                                          │
+│ WORST SECTORS:                                                           │
+│   • Information Technology   │ -8% week; AI disruption fears            │
+│   • Metals & Mining          │ -3.3% Friday                             │
+│   • Communications Services  │ AI concerns                              │
+│   • Logistics/Freight        │ AI automation fears                      │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ TOP STOCK MOVERS                                                         │
+├──────────────────────────────────────────────────────────────────────────┤
+│ GAINERS:                                                                 │
+│   Fastly (FSLY)          │ +273% from lows │ Turnaround story          │
+│   Rivian (RIVN)          │ +27%            │ Strong delivery guidance  │
+│   Applied Materials      │ +14%            │ AI "Giga-cycle" earnings  │
+│   Airbnb (ABNB)          │ +6%             │ Earnings beat             │
+│   Moderna (MRNA)         │ +6%             │ Strong results            │
+│                                                                          │
+│ LOSERS:                                                                  │
+│   Apple (AAPL)           │ -5.0%           │ $261.73; AI concerns      │
+│   Intel (INTC)           │ -3.75%          │ $46.48; competition       │
+│   Amazon (AMZN)          │ -2.2%           │ $199.60; tech selloff     │
+│   NVIDIA (NVDA)          │ -2.2%           │ $186.94; AI fears         │
+│   DraftKings (DKNG)      │ -13.5%          │ Revenue guidance miss     │
+│   AppLovin (APP)         │ -20% Thu        │ Despite strong earnings   │
+│                          │ +6.4% Fri       │ Partial recovery          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ KEY THEMES                                                               │
+├──────────────────────────────────────────────────────────────────────────┤
+│ 1. AI DISRUPTION FEARS dominating psychology                            │
+│ 2. INFLATION COOLING but markets not responding                         │
+│ 3. RATE CUTS COMING - June highly probable                              │
+│ 4. SECTOR ROTATION - Tech to defensives                                 │
+│ 5. "SHOOT FIRST, ASK LATER" - indiscriminate selling                    │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ UPCOMING EVENTS                                                          │
+├──────────────────────────────────────────────────────────────────────────┤
+│ Monday, Feb 16     │ MARKETS CLOSED (Presidents' Day)                   │
+│ Tuesday, Feb 17    │ PCE Price Index (Fed's preferred inflation gauge)  │
+│ This Week          │ FOMC Minutes Release                               │
+│ This Week          │ India AI Impact Summit                             │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ MARKET SENTIMENT                                                         │
+├──────────────────────────────────────────────────────────────────────────┤
+│ CURRENT:    Nervous; AI-disruption fears overwhelming positive macro    │
+│ OUTLOOK:    Volatile; defensive positioning warranted                   │
+│ OPPORTUNITY: Quality names sold indiscriminately on sector fears        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+Report Generated: February 15, 2026
+Data Source: Brave Search API aggregation of major financial sources
+Markets Closed: Monday, February 16 (Presidents' Day Holiday)
+═══════════════════════════════════════════════════════════════════════════
