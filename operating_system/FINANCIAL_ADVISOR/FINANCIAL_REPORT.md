@@ -1,6 +1,6 @@
-# Daily Financial Report — Saturday, February 14, 2026
+# Daily Financial Report — Monday, February 16, 2026
 
-> Generated at 20:06 UTC | Pre-market briefing (based on Friday, February 13, 2026 close)
+> Generated at 18:00 UTC | Pre-market briefing
 
 ---
 
@@ -10,47 +10,40 @@
 |-------|-----------|--------|----------|
 | S&P 500 | 6,836.17 | +3.41 | +0.05% |
 | Dow Jones | 49,500.93 | +48.95 | +0.10% |
-| Nasdaq Composite | 22,546.67 | -49.48 | -0.22% |
-| Russell 2000 | — | — | — |
+| Nasdaq Composite | 22,546.67 | -50.48 | -0.22% |
+| Russell 2000 | 2,646.70 | +30.87 | +1.18% |
 
-**Pre-market Futures:**
-- Markets closed for weekend; futures trading shows cautious optimism following Friday's inflation data
-- All three major indices posted their worst weekly losses of 2026: Dow -1.2%, S&P 500 -1.4%, Nasdaq -2.1% (fifth consecutive weekly loss)
-- S&P 500 trading in range between 6,500-7,000, attempting to reclaim 50-day moving average
+**Pre-market Futures (as of 11:30 AM ET):**
+- S&P 500 futures: +0.4% — Markets closed for Presidents' Day holiday
+- Dow Jones futures: +0.3%
+- Nasdaq-100 futures: +0.4%
+- Light holiday trading volume; regular trading resumes Tuesday, Feb 17 at 9:30 AM ET
 
 ---
 
 ## 🌍 Global Markets
 
 ### Asia-Pacific
-- Markets traded lower Friday, tracking Wall Street declines on AI disruption fears
-- Japan's Nikkei 225: -1.21% to 56,941.97 (briefly touched 58,000 Thursday before retreating)
-- South Korea's Kospi: -0.28% to 5,507.01, ending four-day winning streak
-- Hong Kong's Hang Seng: -1.71%, pressured by basic materials stocks
-- China's CSI 300: -1.25% to 4,660.41
-- Taiwan closed for Lunar New Year holiday
-- Japanese and Indian IT stocks declined on AI disruption concerns
+- **Japan Nikkei 225:** -0.2% (closed 56,806.41) — Q4 GDP grew just 0.1% QoQ (0.2% annualized), missing 1.6% forecast
+- **Hong Kong Hang Seng:** +0.5% (closed 26,705.94) — Half-day session ahead of Lunar New Year
+- **China, South Korea, Taiwan:** Markets closed for Lunar New Year holiday (Feb 16-21)
+- **MSCI Asia-Pacific ex-Japan:** +0.1%
 
 ### Europe
-- Strong inflows to European equity funds: $17.53 billion in week ended Feb 11 (most since at least 2022)
-- Asian funds drew $6.28 billion net inflows
-- US equity funds saw first weekly outflows in three weeks: -$1.42 billion
-- Investors rotating out of US mega-cap tech due to valuation concerns and AI spending worries
+- **FTSE 100:** +0.2% (10,466.39) — Banking sector recovery from AI-driven selloff
+- **CAC 40:** +0.3% (8,333.73)
+- **DAX:** +0.1% (24,926.47)
+- **STOXX 600:** +0.4% — Thin trading due to US holiday
 
 ---
 
 ## 📈 Bonds & Rates
 
-- **10-Year Treasury Yield:** 4.05% (down from 4.11% Thursday)
-- **2-Year Treasury Yield:** Data unavailable from search results
-- **2s/10s Spread:** Data unavailable from search results
-- **Fed Funds Rate:** 3.50%–3.75%
-
-**Key developments:**
-- Treasury yields fell sharply following cooler-than-expected CPI data
-- Bond market rallied as 10-year yield approached psychological 4% floor
-- Probability of June 2026 rate cut surged to over 80%
-- Market shifting away from "higher for longer" rate expectations
+- **10-Year Treasury Yield:** 4.05% (Friday close), edging to 4.20% Monday (via Capitol Skyline)
+- **2-Year Treasury Yield:** Data delayed
+- **2s/10s Spread:** Modest steepening
+- **Fed Funds Rate:** 3.50%-3.75% (unchanged January meeting)
+- **China Treasury holdings:** $682.6B (down from $1.32T peak in 2013)
 
 ---
 
@@ -58,86 +51,90 @@
 
 | Commodity | Price | Change |
 |-----------|-------|--------|
-| WTI Crude Oil | $62.70-62.85 | Down ~1.1% for week |
-| Gold | $5,042-5,050/oz | +$92 (rebounded from Thursday selloff) |
-| Silver | — | — |
+| WTI Crude Oil | $62.86-$63.02/bbl | +0.2% |
+| Gold | $4,990.56/oz | -$51.65 (-1.02%) |
+| Silver | $76.54/oz | -$0.85 (-1.1%) |
 | Natural Gas | — | — |
-
-**Notable:**
-- Oil prices tumbling on massive supply surplus and Iran diplomacy hopes
-- US crude inventories rose 8.5M barrels (unexpected build)
-- Brent crude: $67-70/barrel range
-- Gold up ~75% year-over-year; trading near all-time highs
 
 ---
 
 ## 💱 Currencies
 
-- **DXY (Dollar Index):** 96.85 (down 0.1%)
-- **EUR/USD:** Data unavailable from search results
-- **USD/JPY:** Data unavailable from search results
-- **GBP/USD:** Data unavailable from search results
-
-**Trend:** Dollar weakened as Treasury yields fell and rate cut expectations increased
+- **DXY (Dollar Index):** 96.90 — Slight decline from prior week, modest Monday uptick
+- **EUR/USD:** $1.1867 (down from $1.1876)
+- **USD/JPY:** ¥153.53 (up from ¥152.71)
+- **GBP/USD:** $1.3650 (down from $1.3654)
 
 ---
 
 ## 📰 Key Headlines
 
-1. **Inflation Cools to 2.4%**: January CPI came in at 2.4% YoY (below 2.5% estimate), lowest since May; Core CPI at 2.5%, lowest since March 2021
-2. **Strong Jobs Report**: US added twice as many jobs as expected in January, complicating Fed rate cut timeline
-3. **AI Disruption Fears Continue**: Software, logistics, real estate, and gaming stocks hit by concerns over AI automation
-4. **Tech Weekly Carnage**: Nasdaq posts fifth consecutive weekly loss as AI capex concerns and disruption worries weigh on sentiment
-5. **Kevin Warsh Nominated**: Former Fed governor nominated to replace Powell; expected to favor balance sheet reduction and productivity-driven rate cuts
+1. **US markets closed Monday for Presidents' Day** — Light holiday trading in futures; full trading resumes Tuesday
+2. **Inflation cools to 2.4% headline, 2.5% core** — January CPI rose 0.2% MoM (below 0.3% forecast), reinforcing June Fed rate cut expectations
+3. **Japan's economy stalls** — Q4 GDP growth of 0.1% QoQ misses forecasts, raising pressure on PM Takaichi's fiscal stimulus plans
+4. **Sector rotation intensifies** — Energy (+21% YTD), Materials (+17%), Staples (+15%) vastly outperform as tech underperforms
+5. **High-stakes earnings week ahead** — Walmart, Palo Alto Networks, Analog Devices, Booking Holdings, Alibaba reporting; FOMC minutes Wednesday
 
 ---
 
 ## 🏭 Sector Watch
 
-- **Top Performing:** Semiconductors (Applied Materials +8%, Arista Networks +5%), Cryptocurrency (Coinbase +17% despite revenue drop)
-- **Worst Performing:** Real Estate/Logistics (AI automation fears), Software (disruption concerns), Gaming (Unity Software -25% for week, -57% YTD)
+- **Top Performing:** Energy (+21% YTD), Materials (+17%), Consumer Staples (+15%), Industrials (+12%) — "Reflation trade" driving value outperformance
+- **Worst Performing:** Technology (flat to negative YTD), Communications, Financials — AI infrastructure spending concerns weigh on sentiment
 - **Notable Movers:** 
-  - **Winners**: Applied Materials (AI chip demand), Coinbase (crypto rebound to $68.8K), REITs (lower yields boost valuations)
-  - **Losers**: Pinterest -17% (tariff impact on advertisers), DraftKings -14% (weak forecast), Nvidia and Apple -2%+ (tech pressure continues)
-
-**Sector narrative:**
-- AI arms race: Alphabet, Amazon, Microsoft, Meta expected to spend $650B+ on AI capex in 2026
-- Concerns about free cash flow and near-term profitability persist
-- Financial sector facing net interest margin compression as yield curve flattens
+  - **Rivian (RIVN):** +26% recent sessions on analyst upgrades, EV partnership rumors
+  - **Coinbase (COIN):** +16.5% on share buyback completion, crypto volatility resurgence
+  - **Nvidia (NVDA):** -2.2% Friday ahead of Feb 25 earnings call
+  - **AppLovin (APP):** +6.4% as AI disruption debates continue
+  - **Constellation Brands (STZ):** -8.0% on CEO leadership transition (Nicholas Fink in April)
+  - **Russell 2000:** +6.6% YTD as investors rotate into small-cap value
 
 ---
 
-## 📅 Economic Calendar (Today)
+## 📅 Economic Calendar (This Week)
 
-| Time (ET) | Event | Consensus | Prior |
-|-----------|-------|-----------|-------|
-| — | Weekend | — | — |
-
-**Next Week:**
-- FOMC minutes release
-- US jobless claims data
-- Commentary from Federal Reserve officials expected
+| Day | Time (ET) | Event | Consensus | Prior |
+|-----|-----------|-------|-----------|-------|
+| **Mon** | — | Markets closed (Presidents' Day) | — | — |
+| **Tue** | Morning | Empire State Manufacturing Survey (Feb) | — | — |
+| **Tue** | Morning | Home Builder Confidence Index (Feb) | — | — |
+| **Wed** | Morning | Housing Starts (Nov & Dec, delayed) | — | — |
+| **Wed** | Morning | Building Permits (Nov & Dec, delayed) | — | — |
+| **Wed** | Morning | Durable Goods Orders (Dec, delayed) | — | — |
+| **Wed** | Morning | Industrial Production (Jan) | — | — |
+| **Wed** | 2:00 PM | **FOMC Meeting Minutes** (January) | — | — |
+| **Thu** | 8:30 AM | Initial Jobless Claims (week ended Feb 14) | — | — |
+| **Thu** | Morning | US Trade Deficit (Dec) | — | — |
+| **Thu** | Morning | Philadelphia Fed Manufacturing Survey (Feb) | — | — |
+| **Thu** | Morning | Leading Economic Index (Dec) | — | — |
+| **Fri** | 8:30 AM | **Q4 GDP (preliminary)** | — | — |
+| **Fri** | 8:30 AM | **Personal Income & Spending (Dec)** | — | — |
+| **Fri** | 8:30 AM | **PCE Index (Dec)** — Fed's preferred inflation gauge | — | — |
+| **Fri** | Morning | S&P Flash US Services & Manufacturing PMIs (Feb) | — | — |
+| **Fri** | Morning | New Home Sales (Nov & Dec, delayed) | — | — |
+| **Fri** | Morning | Consumer Sentiment (prelim, Feb) | — | — |
 
 ---
 
 ## 🔍 Analysis & Outlook
 
-**Market Sentiment:** Mixed to cautious. Friday's session saw relief from inflation data, but failed to offset the week's steep losses. The "Goldilocks" CPI reading (cooling inflation without recession) supports the soft-landing narrative, yet AI disruption fears continue to create volatility across multiple sectors.
+**Market Sentiment:** Cautiously optimistic. Softer-than-expected January inflation (2.4% headline, 2.5% core) reinforced dovish Fed expectations, supporting June rate cut pricing. However, a pronounced sector rotation is underway — traditional "value" sectors (Energy, Materials, Staples, Industrials) have surged while mega-cap tech lags amid AI infrastructure spending concerns. The S&P 500 remains range-bound near 6,836, with the 7,000 psychological level proving elusive for weeks.
 
 **Key Themes:**
-1. **Inflation victory lap**: CPI at 2.4% validates Fed's patient approach; real wages now growing faster than prices
-2. **AI disruption cascade**: Concerns spreading from software to logistics, real estate, legal services, and gaming
-3. **Rotation underway**: Capital flowing out of US mega-caps into European and Asian equities
-4. **Rate cut watch**: Markets pricing in cuts by Q2 2026, but strong jobs data complicates timeline
-5. **Productivity debate**: Warsh/Bessent camp argues AI-driven productivity boom mirrors 1990s, justifying lower rates despite growth
+- **Inflation cooling, rate cut hopes rising:** January CPI's 0.2% MoM gain (vs 0.3% forecast) keeps the door open for Fed easing later this year, despite resilient labor markets
+- **10-year Treasury:** Closed Friday at 4.05%, a two-month low, before edging to 4.20% Monday — reflecting China's reported guidance to reduce US Treasury holdings
+- **Global growth concerns:** Japan's Q4 GDP miss (0.1% vs 1.6% forecast) highlights fragility; Asian markets closed for Lunar New Year limit directional signals
+- **Sector divergence risk:** Energy, Materials, Staples, and Industrials (~19% of S&P 500) vastly outperforming Technology (~29%), creating narrow breadth and rotation risk
+- **Earnings season accelerates:** Walmart (Thursday), Palo Alto Networks (Tuesday), Analog Devices (Wednesday), Booking Holdings (Wednesday) will test consumer spending and tech resilience
 
-**Technical outlook:** S&P 500 attempting to stabilize after testing 6,500 support. Resistance at 50-day MA around 6,900. VIX retreated, suggesting fear subsiding. RSI near neutral at 50.
+**What to Watch:**
+1. **FOMC minutes (Wednesday):** Will provide clarity on the Fed's rate-cut timeline and reaction to recent inflation/jobs data
+2. **Q4 GDP & PCE (Friday):** Critical for confirming soft-landing narrative; PCE is the Fed's preferred inflation metric
+3. **Walmart earnings (Thursday):** A bellwether for consumer health; stock up 13% YTD after joining the $1T market cap club
+4. **China demand:** With Asian markets closed, any fresh commentary on China's Treasury holdings or economic stimulus will move bonds and commodities
+5. **7,000 test for S&P 500:** Markets have stalled at 6,920-6,940 for weeks; a breakout (or failure) will signal near-term direction
 
-**What to watch:** 
-- Nvidia earnings (viewed as bellwether for AI spending sustainability)
-- Further clarity on Fed timeline from upcoming FOMC minutes
-- Continued spillover from AI disruption narrative
-- Sustainability of European/Asian equity inflows vs. US outflows
+**Risks:** Narrow market breadth, elevated valuations in "reflation trade" sectors, AI capex skepticism, geopolitical tensions (US-Iran nuclear talks this week), and potential for stronger-than-expected data to derail rate cut expectations.
 
 ---
 
