@@ -1,6 +1,6 @@
-# Daily Financial Report — Saturday, February 14, 2026
+# Daily Financial Report — February 18, 2026
 
-> Generated at 20:06 UTC | Pre-market briefing (based on Friday, February 13, 2026 close)
+> Generated at 18:00 UTC | Pre-market briefing
 
 ---
 
@@ -8,49 +8,42 @@
 
 | Index | Last Close | Change | % Change |
 |-------|-----------|--------|----------|
-| S&P 500 | 6,836.17 | +3.41 | +0.05% |
-| Dow Jones | 49,500.93 | +48.95 | +0.10% |
-| Nasdaq Composite | 22,546.67 | -49.48 | -0.22% |
+| S&P 500 | 6,843.22 | +6.84 | +0.1% |
+| Dow Jones | 49,533.19 | +32.26 | +0.07% |
+| Nasdaq Composite | 22,578.38 | +31.61 | +0.14% |
 | Russell 2000 | — | — | — |
 
-**Pre-market Futures:**
-- Markets closed for weekend; futures trading shows cautious optimism following Friday's inflation data
-- All three major indices posted their worst weekly losses of 2026: Dow -1.2%, S&P 500 -1.4%, Nasdaq -2.1% (fifth consecutive weekly loss)
-- S&P 500 trading in range between 6,500-7,000, attempting to reclaim 50-day moving average
+**Midday Trading (Feb 18, 12:00 ET):**
+- S&P 500: Up 0.84-0.9%, approaching 6,900 level (per CNBC, StockMarketWatch)
+- Nasdaq Composite: Up 1.20-1.4%, tech stocks recovering (per CNBC, StockMarketWatch)
+- Dow Jones: Up 272-315 points (+0.6-0.63%) (per CNBC, StockMarketWatch)
+- Russell 2000: Up 1.2%, strong small-cap participation (per StockMarketWatch)
 
 ---
 
 ## 🌍 Global Markets
 
 ### Asia-Pacific
-- Markets traded lower Friday, tracking Wall Street declines on AI disruption fears
-- Japan's Nikkei 225: -1.21% to 56,941.97 (briefly touched 58,000 Thursday before retreating)
-- South Korea's Kospi: -0.28% to 5,507.01, ending four-day winning streak
-- Hong Kong's Hang Seng: -1.71%, pressured by basic materials stocks
-- China's CSI 300: -1.25% to 4,660.41
-- Taiwan closed for Lunar New Year holiday
-- Japanese and Indian IT stocks declined on AI disruption concerns
+- Most major Asian markets **closed for Lunar New Year holidays** (China, Hong Kong, South Korea, Taiwan, Singapore)
+- Japan Nikkei 225: Closed **down 0.4%** at 56,566.49 on Tuesday (per CNBC)
+- Australia S&P/ASX 200: Up 0.2% at 8,958.90 (per BizzBuzz)
+- India Sensex: Up 0.2% (per BizzBuzz)
+- **⚠️ Low liquidity** expected through end of week due to holidays
 
 ### Europe
-- Strong inflows to European equity funds: $17.53 billion in week ended Feb 11 (most since at least 2022)
-- Asian funds drew $6.28 billion net inflows
-- US equity funds saw first weekly outflows in three weeks: -$1.42 billion
-- Investors rotating out of US mega-cap tech due to valuation concerns and AI spending worries
+- France CAC 40: Up 0.54% to 8,361 points (Tuesday close, per MarketScreener)
+- Germany DAX: Up 0.2% to 24,845.47 (Tuesday, per BizzBuzz)
+- Euro Stoxx 50: Up 0.77% to 6,024 points (Tuesday, per MarketScreener)
+- UK FTSE 100: Up 0.4% to 10,481.00 (Tuesday, per BizzBuzz)
 
 ---
 
 ## 📈 Bonds & Rates
 
-- **10-Year Treasury Yield:** 4.05% (down from 4.11% Thursday)
-- **2-Year Treasury Yield:** Data unavailable from search results
-- **2s/10s Spread:** Data unavailable from search results
-- **Fed Funds Rate:** 3.50%–3.75%
-
-**Key developments:**
-- Treasury yields fell sharply following cooler-than-expected CPI data
-- Bond market rallied as 10-year yield approached psychological 4% floor
-- Probability of June 2026 rate cut surged to over 80%
-- Market shifting away from "higher for longer" rate expectations
+- **10-Year Treasury Yield:** 4.08%, up from 4.07% previous close (as of 12:33 ET, per Investopedia)
+- **2-Year Treasury Yield:** Data not available in recent searches
+- **2s/10s Spread:** Data not available in recent searches
+- **Fed Funds Rate:** 6% probability of -25bp cut at March 17-18 meeting (per Barchart)
 
 ---
 
@@ -58,52 +51,44 @@
 
 | Commodity | Price | Change |
 |-----------|-------|--------|
-| WTI Crude Oil | $62.70-62.85 | Down ~1.1% for week |
-| Gold | $5,042-5,050/oz | +$92 (rebounded from Thursday selloff) |
-| Silver | — | — |
-| Natural Gas | — | — |
+| WTI Crude Oil | $64.40/barrel | +3% (per Investopedia, 12:33 ET) |
+| Gold | $5,000.77/oz | +$122.09 (+2.5%) (per GoldPriceZ, 14:00 UTC) |
+| Silver | $78.00/oz | +6% (per Investopedia, 12:33 ET) |
+| Natural Gas | — | Data not available |
 
-**Notable:**
-- Oil prices tumbling on massive supply surplus and Iran diplomacy hopes
-- US crude inventories rose 8.5M barrels (unexpected build)
-- Brent crude: $67-70/barrel range
-- Gold up ~75% year-over-year; trading near all-time highs
+**Notes:** Oil rallied on Iran-US nuclear tension (VP Vance warned military action still possible). Gold and silver rebounded sharply after Tuesday's slump.
 
 ---
 
 ## 💱 Currencies
 
-- **DXY (Dollar Index):** 96.85 (down 0.1%)
-- **EUR/USD:** Data unavailable from search results
-- **USD/JPY:** Data unavailable from search results
-- **GBP/USD:** Data unavailable from search results
-
-**Trend:** Dollar weakened as Treasury yields fell and rate cut expectations increased
+- **DXY (Dollar Index):** 97.45, up 0.3% (as of 12:33 ET, per Investopedia)
+- **EUR/USD:** 1.1850, down 0.14% (per MarketScreener)
+- **USD/JPY:** 152.90 yen (per BizzBuzz)
+- **GBP/USD:** Data not available in recent searches
 
 ---
 
 ## 📰 Key Headlines
 
-1. **Inflation Cools to 2.4%**: January CPI came in at 2.4% YoY (below 2.5% estimate), lowest since May; Core CPI at 2.5%, lowest since March 2021
-2. **Strong Jobs Report**: US added twice as many jobs as expected in January, complicating Fed rate cut timeline
-3. **AI Disruption Fears Continue**: Software, logistics, real estate, and gaming stocks hit by concerns over AI automation
-4. **Tech Weekly Carnage**: Nasdaq posts fifth consecutive weekly loss as AI capex concerns and disruption worries weigh on sentiment
-5. **Kevin Warsh Nominated**: Former Fed governor nominated to replace Powell; expected to favor balance sheet reduction and productivity-driven rate cuts
+1. **Tech Rally Resumes:** Nvidia (+2%) gains on Meta partnership to deploy millions of AI chips; Amazon (+2%) rises on Ackman stake increase (per CNBC, Investopedia)
+2. **Economic Data Beats:** Dec housing starts +6.2% (1.404M vs 1.304M est), building permits +4.2% (1.448M), Jan manufacturing production +0.6% (vs +0.4% est) (per Barchart, StockMarketWatch)
+3. **Fed Minutes Ahead:** FOMC January meeting minutes due 2:00 PM ET today; markets watching for rate cut signals (per CNBC, Investopedia)
+4. **Earnings Watch:** Nvidia earnings scheduled Feb 25 as AI bellwether; Garmin surges +16% on Q4 beat; Palo Alto Networks -5% on weak guidance (per StockMarketWatch, InvestingLive)
+5. **Geopolitics:** Iran-US nuclear talks show "understanding on guiding principles" but deal not imminent; VP Vance warns military action still possible, boosting oil prices (per Investopedia, Mitrade)
 
 ---
 
 ## 🏭 Sector Watch
 
-- **Top Performing:** Semiconductors (Applied Materials +8%, Arista Networks +5%), Cryptocurrency (Coinbase +17% despite revenue drop)
-- **Worst Performing:** Real Estate/Logistics (AI automation fears), Software (disruption concerns), Gaming (Unity Software -25% for week, -57% YTD)
+- **Top Performing:** Technology (+1.2-1.4% on Nasdaq), with semiconductors leading; Nvidia +2%, Micron +5%, Analog Devices +3.5%, Cadence Design +9% (per CNBC, InvestingLive, SmallcapsDaily)
+- **Worst Performing:** Software under pressure earlier in week on AI disruption fears; Palo Alto Networks -5% on weak profit outlook today (per Investopedia, InvestingLive)
 - **Notable Movers:** 
-  - **Winners**: Applied Materials (AI chip demand), Coinbase (crypto rebound to $68.8K), REITs (lower yields boost valuations)
-  - **Losers**: Pinterest -17% (tariff impact on advertisers), DraftKings -14% (weak forecast), Nvidia and Apple -2%+ (tech pressure continues)
-
-**Sector narrative:**
-- AI arms race: Alphabet, Amazon, Microsoft, Meta expected to spend $650B+ on AI capex in 2026
-- Concerns about free cash flow and near-term profitability persist
-- Financial sector facing net interest margin compression as yield curve flattens
+  - Garmin (GRMN) +16% on Q4 earnings beat and strong FY2026 guidance of $7.9B revenue (per StockMarketWatch)
+  - Moderna (MRNA) +6% as FDA agrees to review mRNA flu vaccine after reversing earlier rejection (per CNBC)
+  - Mister Car Wash (MCW) +16% on $3.1B private equity buyout by Leonard Green & Partners (per StockMarketWatch)
+  - Masimo (MASI) +34% on Danaher acquisition at $180/share ($9.9B deal) (per Bloomberg via SmallcapsDaily)
+  - Amazon (AMZN) +2% despite Berkshire Hathaway selling nearly entire stake; Ackman's Pershing Square increased position 65% in Q4 (per CNBC, Investopedia)
 
 ---
 
@@ -111,33 +96,29 @@
 
 | Time (ET) | Event | Consensus | Prior |
 |-----------|-------|-----------|-------|
-| — | Weekend | — | — |
+| 2:00 PM | FOMC Meeting Minutes (Jan 27-28) | N/A | Rate held steady (first time since July) |
+| Market Close | Dec Capital Goods Orders (released) | +0.3% | +0.6% actual ✓ |
+| Market Close | Dec Housing Starts (released) | 1.304M | 1.404M actual ✓ |
+| Market Close | Dec Building Permits (released) | 1.400M | 1.448M actual ✓ |
+| Market Close | Jan Manufacturing Production (released) | +0.4% | +0.6% actual ✓ |
 
-**Next Week:**
-- FOMC minutes release
-- US jobless claims data
-- Commentary from Federal Reserve officials expected
+**This Week Remaining:** Thu - initial jobless claims, Philly Fed survey, Dec trade deficit, Jan pending home sales; Fri - Q4 GDP (+3.0% est), Dec core PCE price index (+0.3% m/m, +2.9% y/y est), Dec personal spending/income, Feb UMich consumer sentiment
 
 ---
 
 ## 🔍 Analysis & Outlook
 
-**Market Sentiment:** Mixed to cautious. Friday's session saw relief from inflation data, but failed to offset the week's steep losses. The "Goldilocks" CPI reading (cooling inflation without recession) supports the soft-landing narrative, yet AI disruption fears continue to create volatility across multiple sectors.
+**Market Sentiment:** Risk-on tone dominates midday Wednesday as "AI fatigue" eases and economic resilience narrative strengthens. Broad-based rally extends beyond mega-cap tech into small-caps (+1.2% Russell 2000), signaling improved market breadth (per StockMarketWatch).
 
 **Key Themes:**
-1. **Inflation victory lap**: CPI at 2.4% validates Fed's patient approach; real wages now growing faster than prices
-2. **AI disruption cascade**: Concerns spreading from software to logistics, real estate, legal services, and gaming
-3. **Rotation underway**: Capital flowing out of US mega-caps into European and Asian equities
-4. **Rate cut watch**: Markets pricing in cuts by Q2 2026, but strong jobs data complicates timeline
-5. **Productivity debate**: Warsh/Bessent camp argues AI-driven productivity boom mirrors 1990s, justifying lower rates despite growth
+- **Economic soft landing:** Four major data releases today beat expectations, bolstering confidence that the US economy remains on solid footing despite restrictive rates. Housing and manufacturing strength suggests no imminent recession (per Barchart, StockMarketWatch).
+- **AI optimism returns:** After weeks of disruption fears, tech stocks finding footing as Nvidia-Meta chip deal signals sustained enterprise AI demand. Nvidia earnings Feb 25 will be critical bellwether (per CNBC, StockMarketWatch).
+- **Fed in focus:** Markets pricing only 6% chance of March rate cut. FOMC minutes at 2 PM ET will clarify "bar for rate cuts." Friday's PCE inflation data (Fed's preferred gauge) will be more significant (per Barchart, Investopedia).
+- **Geopolitical premium:** Oil +3% on Iran-US tensions despite "understanding on guiding principles" in nuclear talks. VP Vance's military action warning keeps safe-haven bid modest for gold (+2.5%) (per Investopedia, Mitrade).
 
-**Technical outlook:** S&P 500 attempting to stabilize after testing 6,500 support. Resistance at 50-day MA around 6,900. VIX retreated, suggesting fear subsiding. RSI near neutral at 50.
+**Market Structure:** S&P 500 flat for year-to-date (+0.03% through Feb 17 close) but 117 stocks up/down >20%, with only 94 stocks within ±5% range. Extreme dispersion typically precedes broader moves; semiconductors key sector to watch for direction (per Investopedia, BTIG via CNBC).
 
-**What to watch:** 
-- Nvidia earnings (viewed as bellwether for AI spending sustainability)
-- Further clarity on Fed timeline from upcoming FOMC minutes
-- Continued spillover from AI disruption narrative
-- Sustainability of European/Asian equity inflows vs. US outflows
+**Watch For:** FOMC minutes at 2 PM ET for clues on rate path; continued rotation into cyclicals/small-caps vs. mega-cap tech; Friday's PCE inflation reading as key catalyst for next week's trading.
 
 ---
 
